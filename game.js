@@ -13,7 +13,7 @@ const gameBoard = document.getElementById('game-board');
 
 let lastRenderTime = 0;
 
-export function main(currentTime) {
+function main(currentTime) {
   if (gameOver) {
     if (confirm('You lost. Press ok to restart')) {
       window.location = '/';
@@ -29,6 +29,8 @@ export function main(currentTime) {
   update(); // update the values
   draw(); // take the updated values and paint the screen
 }
+
+window.requestAnimationFrame(main);
 
 function update() {
   updateSnake();
